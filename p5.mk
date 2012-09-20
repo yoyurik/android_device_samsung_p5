@@ -22,9 +22,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
-    $(LOCAL_PATH)/modules/cifs.ko:system/lib/modules/cifs.ko \
-    $(LOCAL_PATH)/modules/ntfs.ko:system/lib/modules/ntfs.ko
+    $(LOCAL_PATH)/ril/cbd:root/sbin/cbd
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
@@ -40,6 +38,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 $(call inherit-product, build/target/product/telephony.mk)
 
+PRODUCT_PACKAGES += \
+  Mms
+
+# RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.telephony.ril_class=Smdk4210RIL
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := p5
 PRODUCT_DEVICE := p5
