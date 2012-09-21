@@ -1,4 +1,4 @@
-#
+	#
 # Copyright (C) 2011 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,4 +27,6 @@ TARGET_OTA_ASSERT_DEVICE := p5,GT-P7300
 
 
 TARGET_PREBUILT_KERNEL := device/samsung/p5/kernel
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
